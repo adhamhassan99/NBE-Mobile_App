@@ -7,4 +7,9 @@ const TransferContainer = styled.SafeAreaView`
   flex: 1;
 `;
 
+// const RectBtnFill = styled.Button`
+//   background-color: ${props => props.BgColor};
+//   color: ${props => props.Color || 'white'};
+// `;
+
 export {TransferContainer};

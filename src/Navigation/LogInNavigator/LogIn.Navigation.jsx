@@ -1,12 +1,13 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Login, Home, Benefeciaries, Transfer} from '../../screens';
+import OTP from '../../screens/OTP/OTP';
 
 const LogInStack = createNativeStackNavigator();
 
 export const LogInNavigator = () => {
   return (
-    <LogInStack.Navigator>
+    <LogInStack.Navigator initialRouteName="Login">
       <LogInStack.Screen
         options={{headerShown: false}}
         name="Login"
@@ -26,6 +27,11 @@ export const LogInNavigator = () => {
         options={{headerShown: false}}
         name="Transfer"
         component={Transfer}
+      />
+      <LogInStack.Screen
+        options={{headerShown: false}}
+        name="OTP"
+        component={OTP}
       />
     </LogInStack.Navigator>
   );

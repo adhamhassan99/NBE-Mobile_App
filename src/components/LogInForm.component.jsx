@@ -42,12 +42,11 @@ const FadedText = styled.Text`
   font-size: 16px;
 `;
 
-const RectBtn = styled(Button)`
+export const RectBtn = styled(Button)`
   background-color: ${props => props.BG || `rgba(0, 114, 54, 1)`};
   flex: ${props => props.flex || 0};
   padding: ${props => props.padding || 7}px;
   border: ${props => props.border || `none`};
-
   border-radius: 12px;
 `;
 const StyledFingerPrint = styled.TouchableOpacity`

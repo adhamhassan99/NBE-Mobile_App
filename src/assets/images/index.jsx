@@ -24,3 +24,4 @@ export const ListFilters2 = require('./ListFilters2.png');
 export const ArrowLeft = require('./ArrowLeft.jpg');
 export const FullBrandDark = require('./FullBrandDark.png');
 export const BackBtnDark = require('./BackBtnDark.png');
+export const DownArrow = require('./DownArrow.png');
