@@ -25,3 +25,4 @@ export const ArrowLeft = require('./ArrowLeft.jpg');
 export const FullBrandDark = require('./FullBrandDark.png');
 export const BackBtnDark = require('./BackBtnDark.png');
 export const DownArrow = require('./DownArrow.png');
+export const ModalTransfer = require('./ModalTransfer.png');

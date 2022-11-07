@@ -6,4 +6,49 @@ const OTPContainer = styled.SafeAreaView`
   flex: 1;
 `;
 
-export {OTPContainer};
+const Title = styled.Text`
+  color: white;
+  font-weight: 700;
+  font-size: 25px;
+`;
+const TitleDark = styled.Text`
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
+`;
+const SubTitle = styled.Text`
+  color: rgba(183, 183, 183, 1);
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+`;
+const SubTitleCenter = styled.Text`
+  color: rgba(183, 183, 183, 1);
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  text-align: center;
+`;
+const BtnContainer = styled.TouchableOpacity`
+  background-color: rgba(0, 114, 54, 1);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0px;
+  border-radius: 10px;
+`;
+
+const BtnText = styled.Text`
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+`;
+export {
+  OTPContainer,
+  Title,
+  SubTitle,
+  TitleDark,
+  BtnContainer,
+  SubTitleCenter,
+  BtnText,
+};

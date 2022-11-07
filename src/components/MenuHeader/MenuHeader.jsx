@@ -1,13 +1,12 @@
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 import {HeaderContainer} from './MenuHeader.styles';
-import {IconButton} from 'react-native-paper';
-import {ArrowLeft, BackBtnDark, FullBrandDark} from '../../assets/images';
+import {BackBtnDark, FullBrandDark} from '../../assets/images';
 
 const MenuHeader = ({navigation}) => {
   return (
     <HeaderContainer>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
         <Image source={BackBtnDark} />
       </TouchableOpacity>
       <Image source={FullBrandDark} />
