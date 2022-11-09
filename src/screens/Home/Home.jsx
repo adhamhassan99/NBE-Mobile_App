@@ -18,7 +18,7 @@ const HomeContainer = styled.View`
 const Home = ({navigation}) => {
   return (
     <HomeContainer>
-      <UserTopTab user={'Adham'} />
+      <UserTopTab user={'Adham'} nav={navigation} />
       <ShowBalance />
       <WidgetSection />
       <SendMoney nav={navigation} />

@@ -23,9 +23,9 @@ import {RectBtn} from '../../components/LogInForm.component';
 import {Modal, Portal, Text, Provider} from 'react-native-paper';
 import {ModalTransfer} from '../../assets/images';
 
-const OTP = ({navigation}) => {
+const OTP = ({navigation, route}) => {
   const [visible, setVisible] = React.useState(false);
-
+  const {phone, type} = route.params;
   const showModal = () => setVisible(true);
   const hideModal = () => setVisible(false);
   const containerStyle = {
@@ -40,13 +40,17 @@ const OTP = ({navigation}) => {
     flex: 0.38,
     alignItems: 'center',
   };
-  const phone = '01153311885';
   const user = 'Ahmed Mohamed';
+
+  const handleSubmit = () => {
+    if (type == 'signup') navigation.navigate('SetPassword');
+    else showModal();
+  };
   return (
     <OTPContainer pTop={StatusBar.currentHeight}>
       <MenuHeader navigation={navigation} />
       <Title>Verification</Title>
-      <SubTitle>Enter 5 digit code we sent to {phone}</SubTitle>
+      <SubTitle>Enter 5 digit code we sent to {phone}1</SubTitle>
       <OTPInputView
         style={{
           width: '100%',
@@ -58,7 +62,7 @@ const OTP = ({navigation}) => {
         codeInputFieldStyle={styles.underlineStyleBase}
         codeInputHighlightStyle={styles.underlineStyleHighLighted}
         m
-        onCodeFilled={() => showModal()}
+        onCodeFilled={handleSubmit}
       />
       <Provider>
         <Portal>
@@ -78,7 +82,7 @@ const OTP = ({navigation}) => {
         </Portal>
       </Provider>
       <RectBtn
-        onPress={() => showModal()}
+        onPress={handleSubmit}
         style={{marginTop: 'auto', marginBottom: 20}}
         mode="contained"
         textColor="white"

@@ -43,7 +43,7 @@ const FadedText = styled.Text`
 `;
 
 export const RectBtn = styled(Button)`
-  background-color: ${props => props.BG || `rgba(0, 114, 54, 1)`};
+  background-color: ${props => props.BG || `rgba(18, 167, 89, 1)`};
   flex: ${props => props.flex || 0};
   padding: ${props => props.padding || 7}px;
   border: ${props => props.border || `none`};
@@ -64,6 +64,8 @@ const StyledFingerPrint = styled.TouchableOpacity`
 // `;
 
 const LogInForm = ({modalToggle, nav}) => {
+  const [checked, setChecked] = React.useState(false);
+
   return (
     <FormContainer>
       <FormInput
@@ -77,7 +79,15 @@ const LogInForm = ({modalToggle, nav}) => {
         placeholderTextColor={'#007236'}
       />
       <FormRow>
-        <View>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Checkbox
+            uncheckedColor="white"
+            color="white"
+            status={checked ? 'checked' : 'unchecked'}
+            onPress={() => {
+              setChecked(!checked);
+            }}
+          />
           <RegText> Remember me</RegText>
         </View>
 
@@ -100,7 +110,10 @@ const LogInForm = ({modalToggle, nav}) => {
       <FormRow justify="center">
         <RegText>
           Dont have an account?
-          <RegText color="rgba(246, 167, 33, 1)" underlined={true}>
+          <RegText
+            onPress={() => nav.navigate('SignUpMobileNumber', {nav})}
+            color="rgba(246, 167, 33, 1)"
+            underlined={true}>
             Sign up
           </RegText>
         </RegText>

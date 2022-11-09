@@ -21,13 +21,16 @@ import {
   Username,
 } from './UserTopTab.styles';
 
-const UserTopTab = ({user, day = false}) => {
+const UserTopTab = ({user, day = false, nav}) => {
   const [fingerPrintBtn, setFingerPrintBtn] = useState(false);
   const toggleDialog = () => setFingerPrintBtn(!fingerPrintBtn);
   return (
     <TopBarContainer>
       <Col>
-        <BurgerMenuImage source={BurgerMenu} />
+        <BurgerMenuImage
+          onPress={() => nav.toggleDrawer()}
+          source={BurgerMenu}
+        />
         <TouchableOpacity />
         <ProfileImage source={require('../../assets/images/profilepic.jpeg')} />
         <View>

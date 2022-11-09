@@ -5,6 +5,7 @@
  * @format
  * @flow strict-local
  */
+import 'react-native-gesture-handler';
 import React from 'react';
 import {
   ScrollView,
@@ -18,19 +19,14 @@ import {
 } from 'react-native';
 // import SafeAreaView from "react-native-safe-area-view";
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import HideKeyboard from './src/components/HideKeyboard/HideKeyboard.component';
-import {LogInNavigator} from './src/Navigation/LogInNavigator/LogIn.Navigation';
+import AppDrawerNavigator from './src/Navigation/DrawerNavigator/DrawerNavigator';
+import LogInNavigator from './src/Navigation/LogInNavigator/LogInNavigator';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -43,8 +39,8 @@ const App = () => {
 
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor="transparent" translucent={true} />
       <SafeAreaView style={{flex: 1}}>
-        <StatusBar backgroundColor="transparent" translucent={true} />
         <HideKeyboard>
           <KeyboardAvoidingView enabled style={{flex: 1}}>
             <LogInNavigator />

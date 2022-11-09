@@ -1,11 +1,14 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Login, Home, Benefeciaries, Transfer} from '../../screens';
-import OTP from '../../screens/OTP/OTP';
+import {Login, Home, Benefeciaries, Transfer, OTP} from '../../screens';
+import {HomeNavigator} from '../HomeNavigator/Home.Navigation';
+import AppDrawerNavigator from '../DrawerNavigator/DrawerNavigator';
+import MobileNumberEntry from '../../components/MobileNumberEntry/MobileNumberEntry';
+import SetPassword from '../../screens/SetPassword/SetPassword';
 
 const LogInStack = createNativeStackNavigator();
 
-export const LogInNavigator = () => {
+const LogInNavigator = () => {
   return (
     <LogInStack.Navigator initialRouteName="Login">
       <LogInStack.Screen
@@ -15,24 +18,26 @@ export const LogInNavigator = () => {
       />
       <LogInStack.Screen
         options={{headerShown: false}}
-        name="Home"
-        component={Home}
-      />
-      <LogInStack.Screen
-        options={{headerShown: false}}
-        name="Benefeciaries"
-        component={Benefeciaries}
-      />
-      <LogInStack.Screen
-        options={{headerShown: false}}
-        name="Transfer"
-        component={Transfer}
+        name="SignUpMobileNumber"
+        component={MobileNumberEntry}
       />
       <LogInStack.Screen
         options={{headerShown: false}}
         name="OTP"
         component={OTP}
       />
+      <LogInStack.Screen
+        options={{headerShown: false}}
+        name="SetPassword"
+        component={SetPassword}
+      />
+      <LogInStack.Screen
+        options={{headerShown: false}}
+        name="Home"
+        component={Home}
+      />
     </LogInStack.Navigator>
   );
 };
+
+export default LogInNavigator;

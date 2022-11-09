@@ -26,3 +26,7 @@ export const FullBrandDark = require('./FullBrandDark.png');
 export const BackBtnDark = require('./BackBtnDark.png');
 export const DownArrow = require('./DownArrow.png');
 export const ModalTransfer = require('./ModalTransfer.png');
+export const DarkFPBtn = require('./DarkFPBtn.png');
+export const HomeFocused = require('./HomeFocused.png');
+export const HomeUnFocused = require('./HomeUnFocused.png');
+export const PhoneIcon = require('./PhoneIcon.png');
