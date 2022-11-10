@@ -5,6 +5,8 @@ import {HomeNavigator} from '../HomeNavigator/Home.Navigation';
 import AppDrawerNavigator from '../DrawerNavigator/DrawerNavigator';
 import MobileNumberEntry from '../../components/MobileNumberEntry/MobileNumberEntry';
 import SetPassword from '../../screens/SetPassword/SetPassword';
+import SignUpSuccess from '../../screens/SignUpSuccess/SignUpSuccess';
+import TabNav from '../TabNav/TabNav';
 
 const LogInStack = createNativeStackNavigator();
 
@@ -33,8 +35,14 @@ const LogInNavigator = () => {
       />
       <LogInStack.Screen
         options={{headerShown: false}}
+        name="SignUpSuccess"
+        component={SignUpSuccess}
+      />
+
+      <LogInStack.Screen
+        options={{headerShown: false}}
         name="Home"
-        component={Home}
+        component={TabNav}
       />
     </LogInStack.Navigator>
   );

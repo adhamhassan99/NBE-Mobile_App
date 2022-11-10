@@ -42,6 +42,7 @@ const BtnContainer = styled.TouchableOpacity`
 `;
 const EntryView = styled.View`
   margin-left: 20px;
+  flex: 1;
 `;
 const EntryLabel = styled.Text`
   color: ${props =>

@@ -111,7 +111,7 @@ const LogInForm = ({modalToggle, nav}) => {
         <RegText>
           Dont have an account?
           <RegText
-            onPress={() => nav.navigate('SignUpMobileNumber', {nav})}
+            onPress={() => nav.navigate('SignUpMobileNumber')}
             color="rgba(246, 167, 33, 1)"
             underlined={true}>
             Sign up

@@ -17,8 +17,8 @@ const TitleDark = styled.Text`
   font-size: 20px;
 `;
 const SubTitle = styled.Text`
-  color: rgba(183, 183, 183, 1);
-  font-size: 15px;
+  color: ${props => (props.white ? 'white' : 'rgba(183, 183, 183, 1)')};
+  font-size: 16px;
   padding-top: 5px;
   padding-bottom: 10px;
 `;

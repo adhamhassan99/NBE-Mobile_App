@@ -15,14 +15,13 @@ import {useNavigation} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {PhoneIcon} from '../../assets/images';
 
-const MobileNumberEntry = ({route}) => {
-  const {nav} = route.params;
+const MobileNumberEntry = ({navigation}) => {
   const [TextValue, setTextValue] = useState('+20');
   const [InputHighlight, setInputHighlight] = useState(false);
 
   return (
     <EntryContainer pTop={StatusBar.currentHeight}>
-      <MenuHeader navigation={nav} />
+      <MenuHeader navigation={navigation} />
       <Title>Mobile Number</Title>
       <SubTitle>Enter the mobile number registred in the bank</SubTitle>
 
@@ -40,7 +39,9 @@ const MobileNumberEntry = ({route}) => {
       </BtnContainer>
 
       <RectBtn
-        onPress={() => nav.navigate('OTP', {phone: TextValue, type: 'signup'})}
+        onPress={() =>
+          navigation.navigate('OTP', {phone: TextValue, type: 'signup'})
+        }
         style={{marginTop: 'auto', marginBottom: 20}}
         mode="contained"
         textColor="white"

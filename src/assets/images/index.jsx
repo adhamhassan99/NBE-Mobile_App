@@ -30,3 +30,6 @@ export const DarkFPBtn = require('./DarkFPBtn.png');
 export const HomeFocused = require('./HomeFocused.png');
 export const HomeUnFocused = require('./HomeUnFocused.png');
 export const PhoneIcon = require('./PhoneIcon.png');
+export const PassBtnIcon = require('./PassBtnIcon.png');
+export const PassToggle = require('./PassToggle.png');
+export const SignUpSuccessPic = require('./SignUpSuccessPic.png');

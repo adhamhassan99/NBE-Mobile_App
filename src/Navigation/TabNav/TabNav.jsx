@@ -14,26 +14,27 @@ const TabNav = () => {
       <Tab.Navigator
         screenOptions={({route}) => ({
           headerShown: false,
-          tabBarIcon: ({focused, color, size}) => {
-            let iconName;
-
-            if (route.name === 'Home') {
-              iconName = focused ? HomeFocused : HomeUnFocused;
-            } else if (route.name === 'Settings') {
-              iconName = focused ? 'ios-list' : 'ios-list-outline';
-            }
-
-            // You can return any component that you like here!
-            return <Image source={iconName} />;
+          tabBarItemStyle: {
+            marginHorizontal: 5,
+            marginVertical: 3,
+            borderRadius: 16,
           },
+          tabBarStyle: {
+            backgroundColor: 'rgba(21, 26, 33, 1)',
+            height: 60,
 
-          tabBarActiveTintColor: 'green',
-          tabBarInactiveTintColor: 'rgba(6, 1, 1, 0.742)',
+            borderTopColor: 'transparent',
+          },
+          tabBarInactiveBackgroundColor: 'rgba(32, 41, 51, 1)',
+          tabBarActiveBackgroundColor: 'rgba(0, 114, 54, 1)',
+          tabBarActiveTintColor: 'white',
+          tabBarInactiveTintColor: 'rgba(183, 183, 183, 1)',
         })}>
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Transfer" component={Transfer} />
         <Tab.Screen name="Benefeciaries" component={Benefeciaries} />
-        <Tab.Screen name="ATMs" component={ATMs} />
+        <Tab.Screen name="alka" component={Benefeciaries} />
+        <Tab.Screen name="sjskl" component={Benefeciaries} />
       </Tab.Navigator>
     </>
   );

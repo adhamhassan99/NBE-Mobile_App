@@ -3,13 +3,16 @@ import React from 'react';
 import {HeaderContainer} from './MenuHeader.styles';
 import {BackBtnDark, FullBrandDark} from '../../assets/images';
 
-const MenuHeader = ({navigation}) => {
+const MenuHeader = ({navigation, logoOnly}) => {
   return (
     <HeaderContainer>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Image source={BackBtnDark} />
-      </TouchableOpacity>
-      <Image source={FullBrandDark} />
+      {logoOnly ? null : (
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Image source={BackBtnDark} />
+        </TouchableOpacity>
+      )}
+
+      <Image style={{marginLeft: 'auto'}} source={FullBrandDark} />
     </HeaderContainer>
   );
 };
