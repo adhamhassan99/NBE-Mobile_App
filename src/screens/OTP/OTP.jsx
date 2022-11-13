@@ -22,6 +22,7 @@ import OTPInputView from '@twotalltotems/react-native-otp-input';
 import {RectBtn} from '../../components/LogInForm.component';
 import {Modal, Portal, Text, Provider} from 'react-native-paper';
 import {ModalTransfer} from '../../assets/images';
+import {StackActions} from '@react-navigation/native';
 
 const OTP = ({navigation, route}) => {
   const [visible, setVisible] = React.useState(false);
@@ -45,6 +46,13 @@ const OTP = ({navigation, route}) => {
   const handleSubmit = () => {
     if (type == 'signup') navigation.navigate('SetPassword');
     else showModal();
+  };
+
+  const handleModalClose = navigation => {
+    setVisible(false);
+    navigation.dispatch(StackActions.popToTop());
+
+    navigation.navigate('Home');
   };
   return (
     <OTPContainer pTop={StatusBar.currentHeight}>
@@ -75,7 +83,7 @@ const OTP = ({navigation, route}) => {
             <SubTitleCenter>
               {user} was successfuly added to your beneficiaries list.
             </SubTitleCenter>
-            <BtnContainer onPress={() => navigation.navigate('Home')}>
+            <BtnContainer onPress={() => handleModalClose(navigation)}>
               <BtnText>Finish</BtnText>
             </BtnContainer>
           </Modal>

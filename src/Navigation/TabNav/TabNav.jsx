@@ -5,36 +5,60 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Benefeciaries, Home, Transfer, ATMs} from '../../screens';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {HomeFocused, HomeUnFocused} from '../../assets/images';
+import TransferNavigator from '../TransferNavigator/TransferNavigator';
 
 const Tab = createBottomTabNavigator();
+const TAB_ICON = {
+  Home: 'home',
+  TransferNavigator: 'paper-plane-outline',
+  Benefeciaries: 'people-outline',
+  ATM: 'location-outline',
+  AirPay: 'home-sharp',
+};
+const TabBarIcon =
+  iconName =>
+  ({size, color}) =>
+    <Ionicons name={iconName} size={32} color={color} />;
+
+const screenOptions = ({route}) => {
+  const iconName = TAB_ICON[route.name];
+  return {
+    tabBarIcon: TabBarIcon(iconName),
+    headerShown: false,
+    tabBarItemStyle: {
+      marginHorizontal: 5,
+      marginVertical: 5,
+      borderRadius: 16,
+      width: 70,
+      height: 70,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    tabBarStyle: {
+      backgroundColor: 'rgba(44, 54, 63, 1)',
+      height: 80,
+
+      borderTopColor: 'transparent',
+    },
+    tabBarInactiveBackgroundColor: 'rgba(255, 255, 255, 0.05)',
+    tabBarActiveBackgroundColor: 'rgba(0, 114, 54, 1)',
+    tabBarActiveTintColor: 'white',
+    tabBarInactiveTintColor: 'rgba(183, 183, 183, 1)',
+    tabBarLabelStyle: {
+      fontSize: 10,
+    },
+  };
+};
 
 const TabNav = () => {
   return (
     <>
-      <Tab.Navigator
-        screenOptions={({route}) => ({
-          headerShown: false,
-          tabBarItemStyle: {
-            marginHorizontal: 5,
-            marginVertical: 3,
-            borderRadius: 16,
-          },
-          tabBarStyle: {
-            backgroundColor: 'rgba(21, 26, 33, 1)',
-            height: 60,
-
-            borderTopColor: 'transparent',
-          },
-          tabBarInactiveBackgroundColor: 'rgba(32, 41, 51, 1)',
-          tabBarActiveBackgroundColor: 'rgba(0, 114, 54, 1)',
-          tabBarActiveTintColor: 'white',
-          tabBarInactiveTintColor: 'rgba(183, 183, 183, 1)',
-        })}>
+      <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Transfer" component={Transfer} />
+        <Tab.Screen name="TransferNavigator" component={TransferNavigator} />
         <Tab.Screen name="Benefeciaries" component={Benefeciaries} />
-        <Tab.Screen name="alka" component={Benefeciaries} />
-        <Tab.Screen name="sjskl" component={Benefeciaries} />
+        <Tab.Screen name="ATM" component={Benefeciaries} />
+        <Tab.Screen name="AirPay" component={Benefeciaries} />
       </Tab.Navigator>
     </>
   );

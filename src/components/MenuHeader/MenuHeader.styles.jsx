@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const HeaderContainer = styled.View`
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

@@ -41,7 +41,7 @@ const LogInNavigator = () => {
 
       <LogInStack.Screen
         options={{headerShown: false}}
-        name="Home"
+        name="TabNav"
         component={TabNav}
       />
     </LogInStack.Navigator>

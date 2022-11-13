@@ -24,7 +24,7 @@ const SignUpSuccess = ({navigation}) => {
         <SubmitBtn
           inverted
           selfCenter
-          onPress={() => navigation.navigate('Home')}>
+          onPress={() => navigation.navigate('TabNav')}>
           <BtnText inverted>Finish</BtnText>
         </SubmitBtn>
       </ImageBackground>

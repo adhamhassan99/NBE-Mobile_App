@@ -19,8 +19,8 @@ const SetPassword = ({navigation}) => {
   const [passValue2, setPassValue2] = useState('');
   const [InputHighlight, setInputHighlight] = useState(false);
   const [InputHighlight2, setInputHighlight2] = useState(false);
-  const [pass1Visible, setPass1Visible] = useState(false);
-  const [pass2Visible, setPass2Visible] = useState(false);
+  const [pass1Visible, setPass1Visible] = useState(true);
+  const [pass2Visible, setPass2Visible] = useState(true);
 
   const handlePassChange = text => {
     setPassValue(text);

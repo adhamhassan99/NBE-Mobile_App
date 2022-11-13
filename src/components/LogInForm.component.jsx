@@ -99,7 +99,7 @@ const LogInForm = ({modalToggle, nav}) => {
           textColor="white"
           flex={0.9}
           labelStyle={{fontSize: 18}}
-          onPress={() => nav.navigate('Home')}>
+          onPress={() => nav.navigate('TabNav')}>
           Log In
         </RectBtn>
 

@@ -42,7 +42,7 @@ const App = () => {
       <StatusBar backgroundColor="transparent" translucent={true} />
       <SafeAreaView style={{flex: 1}}>
         <HideKeyboard>
-          <KeyboardAvoidingView enabled style={{flex: 1}}>
+          <KeyboardAvoidingView style={{flex: 1}}>
             <LogInNavigator />
           </KeyboardAvoidingView>
         </HideKeyboard>

@@ -18,7 +18,7 @@ const SendMoney = ({nav}) => {
       <Row>
         <MainText>Send money</MainText>
         <TouchableOpacity
-          onPress={() => nav.navigate('Transfer')}
+          onPress={() => nav.navigate('TransferNavigator')}
           style={{justifyContent: 'center'}}>
           <DimmedTouchable>View All</DimmedTouchable>
         </TouchableOpacity>

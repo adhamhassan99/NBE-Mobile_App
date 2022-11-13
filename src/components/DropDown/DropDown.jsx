@@ -6,7 +6,7 @@ import {DropDownText} from './DropDown.styles';
 
 const DropDown = ({data, label}) => {
   return (
-    <View style={{marginTop: 30}}>
+    <View style={{marginTop: 10}}>
       <DropDownText>{label}</DropDownText>
       <SelectDropdown
         defaultValueByIndex={0}
