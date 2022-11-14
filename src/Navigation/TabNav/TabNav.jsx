@@ -2,7 +2,7 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Benefeciaries, Home, Transfer, ATMs} from '../../screens';
+import {Benefeciaries, Home, Transfer, ATMs, ATMS} from '../../screens';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {HomeFocused, HomeUnFocused} from '../../assets/images';
 import TransferNavigator from '../TransferNavigator/TransferNavigator';
@@ -55,9 +55,13 @@ const TabNav = () => {
     <>
       <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="TransferNavigator" component={TransferNavigator} />
+        <Tab.Screen
+          name="TransferNavigator"
+          options={{title: 'Transfer'}}
+          component={TransferNavigator}
+        />
         <Tab.Screen name="Benefeciaries" component={Benefeciaries} />
-        <Tab.Screen name="ATM" component={Benefeciaries} />
+        <Tab.Screen name="ATM" component={ATMS} />
         <Tab.Screen name="AirPay" component={Benefeciaries} />
       </Tab.Navigator>
     </>

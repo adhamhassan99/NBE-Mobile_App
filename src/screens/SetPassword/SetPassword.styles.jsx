@@ -2,7 +2,11 @@ import styled from 'styled-components';
 
 const SubmitBtn = styled.TouchableOpacity`
   background-color: ${props =>
-    props.inverted ? 'white' : 'rgba(18, 167, 89, 1)'};
+    props.disabled == true
+      ? 'red'
+      : props.inverted
+      ? 'white'
+      : 'rgba(18, 167, 89, 1)'};
   align-items: center;
   padding: 15px 0px;
   margin-top: auto;
