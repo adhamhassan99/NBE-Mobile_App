@@ -1,18 +1,22 @@
 import {View, Text} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import MapView from 'react-native-maps';
+import {getAtms, requestPermissions} from '../../utils/PlacesApi';
+
 const ATMS = () => {
+  // requestPermissions();
+  const [initialLocation, setInitialLocation] = useState({
+    latitude: 30.086285,
+    longitude: 31.343754,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0921,
+  });
+  // useEffect(() => {
+
+  // }, []);
   return (
     <View style={{flex: 1}}>
-      <MapView
-        initialRegion={{
-          latitude: 30.027523,
-          longitude: 31.474531,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-        style={{flex: 1}}
-      />
+      <MapView initialRegion={initialLocation} style={{flex: 1}} />
     </View>
   );
 };

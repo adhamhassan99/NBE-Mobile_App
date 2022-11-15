@@ -30,27 +30,64 @@ const SetPassword = ({navigation}) => {
   const [InputHighlight2, setInputHighlight2] = useState(false);
   const [pass1Visible, setPass1Visible] = useState(true);
   const [pass2Visible, setPass2Visible] = useState(true);
-  console.log(passValidation);
 
-  const logError = e => {
-    const newValidation = passValidation;
-    if (String(e.regex) === String(/\w*[a-z]\w*/)) {
-      newValidation['Lower case letter'] = false;
-    } else {
-      newValidation['Lower case letter'] = true;
-    }
+  // const logError = e => {
+  //   const newValidation = passValidation;
+  //   if (String(e.regex) === String(/\w*[a-z]\w*/)) {
+  //     newValidation['Lower case letter'] = false;
+  //   } else {
+  //     newValidation['Lower case letter'] = true;
+  //   }
 
-    setPassValidation(newValidation);
-  };
+  //   setPassValidation(newValidation);
+  // };
 
   const SignupSchema = Yup.object().shape({
     pass1: Yup.string()
-      .matches(/\w*[a-z]\w*/, logError)
-      .matches(/\w*[A-Z]\w*/, logError)
-      .matches(/\d/, logError)
-      .matches(/[!@#$%^&*()\-_"=+{}; :,<.>]/, logError)
-      .min(8, logError)
-      .required(),
+      .matches(/\w*[a-z]\w*/)
+      .matches(/\w*[A-Z]\w*/)
+      .matches(/\d/)
+      .matches(/[!@#$%^&*()\-_"=+{}; :,<.>]/)
+      .min(8)
+      .required()
+      .test(
+        'test',
+        'Please enter both your first and last name',
+        function (value) {
+          if (!value) {
+            setPassValidation(validationState);
+            return false;
+          }
+          var newValidState = passValidation;
+          if (/\w*[a-z]\w*/.test(value)) {
+            newValidState['Lower case letter'] = true;
+          } else {
+            newValidState['Lower case letter'] = false;
+          }
+          if (/\w*[A-Z]\w*/.test(value)) {
+            newValidState['Upper case letter'] = true;
+          } else {
+            newValidState['Upper case letter'] = false;
+          }
+          if (/\d/.test(value)) {
+            newValidState['Number '] = true;
+          } else {
+            newValidState['Number '] = false;
+          }
+          if (/[!@#$%^&*()\-_"=+{}; :,<.>]/.test(value)) {
+            newValidState['Special character'] = true;
+          } else {
+            newValidState['Special character'] = false;
+          }
+          if (value.length >= 8) {
+            newValidState['Minimum 8 characters'] = true;
+          } else {
+            newValidState['Minimum 8 characters'] = false;
+          }
+          setPassValidation(newValidState);
+          return true;
+        },
+      ),
 
     pass2: Yup.string()
       .oneOf([Yup.ref('pass1')], 'Passwords do not match')
@@ -78,10 +115,6 @@ const SetPassword = ({navigation}) => {
     return res;
   };
 
-  const HandleInputChange = field => {
-    handleChange(field);
-  };
-
   return (
     <SafeAreaViewContainer>
       <MenuHeader navigation={navigation} />
@@ -92,7 +125,7 @@ const SetPassword = ({navigation}) => {
       <Formik
         validationSchema={SignupSchema}
         initialValues={{pass1: '', pass2: ''}}
-        onSubmit={values => console.log(values)}>
+        onSubmit={() => navigation.navigate('SignUpSuccess')}>
         {({
           handleChange,
           handleBlur,
@@ -127,9 +160,9 @@ const SetPassword = ({navigation}) => {
                 <Image source={PassToggle} />
               </Pressable>
             </BtnContainer>
-            {errors.pass1 && (
+            {/* {errors.pass1 && (
               <Text style={{fontSize: 10, color: 'red'}}>{errors.pass1}</Text>
-            )}
+            )} */}
 
             <BtnContainer border={InputHighlight2}>
               <Image source={PassBtnIcon} />
@@ -157,9 +190,9 @@ const SetPassword = ({navigation}) => {
                 <Image source={PassToggle} />
               </Pressable>
             </BtnContainer>
-            {errors.pass2 && (
+            {/* {errors.pass2 && (
               <Text style={{fontSize: 10, color: 'red'}}>{errors.pass2}</Text>
-            )}
+            )} */}
             <View
               style={{
                 flex: 1,
