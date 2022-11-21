@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 import {Button, Checkbox} from 'react-native-paper';
 import {FingerPrint} from '../assets/images';
 import {Transfer} from '../screens';
+import {SheetManager} from 'react-native-actions-sheet';
 const FormInput = styled.TextInput`
   background-color: transparent;
   padding: 20px 10px;
@@ -65,7 +66,9 @@ const StyledFingerPrint = styled.TouchableOpacity`
 
 const LogInForm = ({modalToggle, nav}) => {
   const [checked, setChecked] = React.useState(false);
-
+  const sheetToggler = () => {
+    SheetManager.show('fingerprint-sheet');
+  };
   return (
     <FormContainer>
       <FormInput
@@ -103,7 +106,7 @@ const LogInForm = ({modalToggle, nav}) => {
           Log In
         </RectBtn>
 
-        <StyledFingerPrint onPress={modalToggle}>
+        <StyledFingerPrint onPress={sheetToggler}>
           <Image source={FingerPrint} />
         </StyledFingerPrint>
       </FormRow>

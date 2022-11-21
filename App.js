@@ -28,6 +28,8 @@ import HideKeyboard from './src/components/HideKeyboard/HideKeyboard.component';
 import AppDrawerNavigator from './src/Navigation/DrawerNavigator/DrawerNavigator';
 import LogInNavigator from './src/Navigation/LogInNavigator/LogInNavigator';
 
+import {SheetProvider} from 'react-native-actions-sheet';
+import './sheets';
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
 const App = () => {
@@ -43,7 +45,9 @@ const App = () => {
       <SafeAreaView style={{flex: 1}}>
         <HideKeyboard>
           <KeyboardAvoidingView style={{flex: 1}}>
-            <LogInNavigator />
+            <SheetProvider>
+              <LogInNavigator />
+            </SheetProvider>
           </KeyboardAvoidingView>
         </HideKeyboard>
       </SafeAreaView>

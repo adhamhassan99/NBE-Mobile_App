@@ -4,7 +4,7 @@ import MapView from 'react-native-maps';
 import {getAtms, requestPermissions} from '../../utils/PlacesApi';
 
 const ATMS = () => {
-  // requestPermissions();
+  requestPermissions();
   const [initialLocation, setInitialLocation] = useState({
     latitude: 30.086285,
     longitude: 31.343754,

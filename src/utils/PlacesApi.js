@@ -16,7 +16,7 @@ export async function requestPermissions() {
     await PermissionsAndroid.request(
       PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
     );
-    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+    if ('granted' === PermissionsAndroid.RESULTS.GRANTED) {
       getAtms();
     }
   }
