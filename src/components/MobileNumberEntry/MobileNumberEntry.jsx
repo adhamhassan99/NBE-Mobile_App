@@ -14,6 +14,7 @@ import {RectBtn} from '../LogInForm.component';
 import {useNavigation} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {PhoneIcon} from '../../assets/images';
+import {BtnText, SubmitBtn} from '../../screens/SetPassword/SetPassword.styles';
 
 const MobileNumberEntry = ({navigation}) => {
   const [TextValue, setTextValue] = useState('+20');
@@ -31,24 +32,20 @@ const MobileNumberEntry = ({navigation}) => {
           <EntryLabel highlight={InputHighlight}>Mobile Number</EntryLabel>
           <InputText
             onFocus={() => setInputHighlight(true)}
-            onEndEditing={() => setInputHighlight(false)}
+            onEndEditing={() => setInputHighlight(true)}
             value={TextValue}
             editable
             onChangeText={text => setTextValue(text)}></InputText>
         </EntryView>
       </BtnContainer>
 
-      <RectBtn
+      <SubmitBtn
         onPress={() =>
           navigation.navigate('OTP', {phone: TextValue, type: 'signup'})
-        }
-        style={{marginTop: 'auto', marginBottom: 20}}
-        mode="contained"
-        textColor="white"
-        flex={0.1}
-        labelStyle={{fontSize: 18}}>
-        Next
-      </RectBtn>
+        }>
+        <BtnText>Submit</BtnText>
+      </SubmitBtn>
+
       <View
         style={{
           justifyContent: 'center',

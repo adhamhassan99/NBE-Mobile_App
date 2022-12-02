@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const WidgetContainer = styled.TouchableOpacity`
   align-items: center;
   box-sizing: border-box;
 `;
 export const IconContainer = styled.TouchableOpacity`
-  background-color: ${props => props.color || "white"};
+  background-color: ${props => props.color || 'white'};
   align-items: center;
   justify-content: center;
   width: 59px;
@@ -16,5 +16,7 @@ export const IconContainer = styled.TouchableOpacity`
 
 export const StyledText = styled.Text`
   color: white;
-  margin-top: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  line-height: 19px;
 `;

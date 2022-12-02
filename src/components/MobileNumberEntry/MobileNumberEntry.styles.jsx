@@ -21,6 +21,7 @@ const SubTitle = styled.Text`
   font-size: 15px;
   padding-top: 5px;
   padding-bottom: 10px;
+  margin-bottom: 10px;
 `;
 const SubTitleCenter = styled.Text`
   color: rgba(183, 183, 183, 1);
