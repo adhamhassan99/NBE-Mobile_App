@@ -4,6 +4,8 @@ import ActionSheet, { SheetManager, SheetProps } from 'react-native-actions-shee
 import { DarkFPBtn } from '../../assets/images';
 import { MainText } from './Actionsheet.styles';
 
+
+
 function Actionsheet(props: SheetProps) {
   const SheetHide= ()=>SheetManager.hide("fingerprint-sheet")
   return (

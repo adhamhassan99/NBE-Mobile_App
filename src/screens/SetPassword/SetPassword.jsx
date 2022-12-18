@@ -50,44 +50,40 @@ const SetPassword = ({navigation}) => {
       .matches(/[!@#$%^&*()\-_"=+{}; :,<.>]/)
       .min(8)
       .required()
-      .test(
-        'test',
-        'Please enter both your first and last name',
-        function (value) {
-          if (!value) {
-            setPassValidation(validationState);
-            return false;
-          }
-          var newValidState = passValidation;
-          if (/\w*[a-z]\w*/.test(value)) {
-            newValidState['Lower case letter'] = true;
-          } else {
-            newValidState['Lower case letter'] = false;
-          }
-          if (/\w*[A-Z]\w*/.test(value)) {
-            newValidState['Upper case letter'] = true;
-          } else {
-            newValidState['Upper case letter'] = false;
-          }
-          if (/\d/.test(value)) {
-            newValidState['Number '] = true;
-          } else {
-            newValidState['Number '] = false;
-          }
-          if (/[!@#$%^&*()\-_"=+{}; :,<.>]/.test(value)) {
-            newValidState['Special character'] = true;
-          } else {
-            newValidState['Special character'] = false;
-          }
-          if (value.length >= 8) {
-            newValidState['Minimum 8 characters'] = true;
-          } else {
-            newValidState['Minimum 8 characters'] = false;
-          }
-          setPassValidation(newValidState);
-          return true;
-        },
-      ),
+      .test('test', 'pass test', function (value) {
+        if (!value) {
+          setPassValidation(validationState);
+          return false;
+        }
+        var newValidState = passValidation;
+        if (/\w*[a-z]\w*/.test(value)) {
+          newValidState['Lower case letter'] = true;
+        } else {
+          newValidState['Lower case letter'] = false;
+        }
+        if (/\w*[A-Z]\w*/.test(value)) {
+          newValidState['Upper case letter'] = true;
+        } else {
+          newValidState['Upper case letter'] = false;
+        }
+        if (/\d/.test(value)) {
+          newValidState['Number '] = true;
+        } else {
+          newValidState['Number '] = false;
+        }
+        if (/[!@#$%^&*()\-_"=+{}; :,<.>]/.test(value)) {
+          newValidState['Special character'] = true;
+        } else {
+          newValidState['Special character'] = false;
+        }
+        if (value.length >= 8) {
+          newValidState['Minimum 8 characters'] = true;
+        } else {
+          newValidState['Minimum 8 characters'] = false;
+        }
+        setPassValidation(newValidState);
+        return true;
+      }),
 
     pass2: Yup.string()
       .oneOf([Yup.ref('pass1')], 'Passwords do not match')

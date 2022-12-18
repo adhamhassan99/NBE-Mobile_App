@@ -60,6 +60,7 @@ const OTP = ({navigation, route}) => {
       <Title>Verification</Title>
       <SubTitle>Enter 5 digit code we sent to {phone}1</SubTitle>
       <OTPInputView
+        selectionColor="transparent"
         style={{
           width: '100%',
           height: 100,
@@ -71,6 +72,7 @@ const OTP = ({navigation, route}) => {
         codeInputHighlightStyle={styles.underlineStyleHighLighted}
         m
         onCodeFilled={handleSubmit}
+        selectionColor="transparent"
       />
       <Provider>
         <Portal>

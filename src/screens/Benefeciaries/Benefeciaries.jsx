@@ -11,6 +11,7 @@ import ExtendedListItem from '../../components/ExtendedListItem/ExtendedListItem
 const Benefeciaries = () => {
   const emptyList = [];
   const [listToggled, setListToggled] = useState(false);
+  const [listData, setListData] = useState(BenefListData);
   const ToggleFilter = () => {
     setListToggled(!listToggled);
   };
@@ -28,15 +29,13 @@ const Benefeciaries = () => {
       <ListHeader listToggled={listToggled} setListToggled={ToggleFilter} />
       {listToggled ? (
         <FlatList
-          ListEmptyComponent={<Text>s</Text>}
           style={{
             marginTop: 40,
             flex: 1,
           }}
           key={'_'}
-          data={BenefListData}
+          data={listData}
           renderItem={renderExtendedItem}
-          keyExtractor={item => item.id}
         />
       ) : (
         <FlatList
@@ -47,10 +46,9 @@ const Benefeciaries = () => {
             flex: 1,
           }}
           columnWrapperStyle={{justifyContent: 'space-between'}}
-          data={BenefListData}
+          data={listData}
           numColumns={4}
           renderItem={renderItem}
-          keyExtractor={item => item.id}
         />
       )}
     </BenefeciariesContainer>
