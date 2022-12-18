@@ -23,6 +23,7 @@ import {RectBtn} from '../../components/LogInForm.component';
 import {Modal, Portal, Text, Provider} from 'react-native-paper';
 import {ModalTransfer} from '../../assets/images';
 import {StackActions} from '@react-navigation/native';
+import {SubmitBtn} from '../SetPassword/SetPassword.styles';
 
 const OTP = ({navigation, route}) => {
   const [visible, setVisible] = React.useState(false);
@@ -58,7 +59,7 @@ const OTP = ({navigation, route}) => {
     <OTPContainer pTop={StatusBar.currentHeight}>
       <MenuHeader navigation={navigation} />
       <Title>Verification</Title>
-      <SubTitle>Enter 5 digit code we sent to {phone}1</SubTitle>
+      <SubTitle>Enter 5 digit code we sent to {phone}</SubTitle>
       <OTPInputView
         selectionColor="transparent"
         style={{
@@ -91,15 +92,10 @@ const OTP = ({navigation, route}) => {
           </Modal>
         </Portal>
       </Provider>
-      <RectBtn
-        onPress={handleSubmit}
-        style={{marginTop: 'auto', marginBottom: 20}}
-        mode="contained"
-        textColor="white"
-        flex={0.1}
-        labelStyle={{fontSize: 18}}>
-        Submit
-      </RectBtn>
+
+      <SubmitBtn onPress={handleSubmit}>
+        <BtnText>Submit</BtnText>
+      </SubmitBtn>
     </OTPContainer>
   );
 };
