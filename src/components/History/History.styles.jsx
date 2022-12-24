@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const HistoryContainer = styled.View`
-  flex: 0.43;
+  flex: 0.4;
+  margin-top: 20;
 `;
 
 export const MainText = styled.Text`

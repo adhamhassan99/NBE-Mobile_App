@@ -33,3 +33,4 @@ export const PhoneIcon = require('./PhoneIcon.png');
 export const PassBtnIcon = require('./PassBtnIcon.png');
 export const PassToggle = require('./PassToggle.png');
 export const SignUpSuccessPic = require('./SignUpSuccessPic.png');
+export const CreditCard = require('./creditCard.png');

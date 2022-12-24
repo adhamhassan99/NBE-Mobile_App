@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-export const SendMoneyContainer = styled.View`
-  flex: 0.22;
-`;
+export const SendMoneyContainer = styled.View``;
 
 export const MainText = styled.Text`
   color: white;

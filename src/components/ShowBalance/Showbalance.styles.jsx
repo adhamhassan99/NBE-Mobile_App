@@ -1,7 +1,8 @@
+import {StyleSheet} from 'react-native';
 import styled from 'styled-components';
 
-export const BalanceContainer = styled.View`
-  flex: 0.2;
+export const BalanceContainer = styled.Pressable`
+  flex: 0.25;
   margin-top: 30px;
 `;
 export const BackgroundImage = styled.ImageBackground`
@@ -35,3 +36,15 @@ export const StyledImage = styled.Image`
   height: 15px;
   width: 15px;
 `;
+
+export default styles = StyleSheet.create({
+  balanceText: {
+    color: 'white',
+    fontSize: 25,
+    fontWeight: '700',
+    marginTop: 20,
+  },
+  bgImg: {
+    tintColor: 'black',
+  },
+});
