@@ -25,9 +25,13 @@ const Home = ({navigation}) => {
       {activeWidget === 'Accounts' && <ShowBalance />}
       {activeWidget === 'Cards' && (
         <View style={styles.cardsView}>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <Image style={styles.creditCard} source={CreditCard} />
-            <Image style={styles.creditCard} source={CreditCard} />
+          <ScrollView horizontal>
+            <View>
+              <Image style={styles.creditCard} source={CreditCard} />
+            </View>
+            <View>
+              <Image style={styles.creditCard} source={CreditCard} />
+            </View>
           </ScrollView>
         </View>
       )}
